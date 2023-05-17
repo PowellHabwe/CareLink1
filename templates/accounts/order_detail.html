@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="container">
+
+    <div class="invoice-box" style="margin-top: 10px; margin-bottom:10px;">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="https://www.sparksuite.com/images/logo.png" style="width: 100%; max-width: 300px" />
+                            </td>
+
+                            <td>
+                                Invoiced to:<br />
+                                {{order.full_name}}<br />
+                                {% comment %} Due: February 1, 2015 {% endcomment %}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Your Address:<br />
+                                {{order.full_address}}.<br />
+                                {{order.city}}, {{order.state}}<br />
+                                {{order.country}}
+                            </td>
+
+                            <td>
+                                Order #{{order.order_number}}<br />
+                                Transaction: {{order.payment.payment_id}}<br />
+                                Order Date: {{order.created_at}}<br />
+                                Status: {{order.payment.status}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+
+
+            <tr class="heading" style="
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;">
+                <td style="font-size: 16px">Products</td>
+
+
+                <td style="font-size: 16px">Price</td>
+            </tr>
+
+
+
+            <tr class="total">
+                <td></td>
+
+                <td>Sub Total: ${{subtotal}}</td>
+
+            </tr>
+
+            <tr class="total">
+                <td></td>
+
+                <td>Tax: ${{order.tax}} </td>
+
+            </tr>
+
+            <tr class="total">
+                <td></td>
+
+                <td>Grand Total: ${{order.order_total}}</td>
+
+            </tr>
+
+            <tr class="details">
+                <td>Thank you for buying from us</td>
+
+            </tr>
+        </table>
+    </div>
+
+
+</main>
+
+{% endblock %}

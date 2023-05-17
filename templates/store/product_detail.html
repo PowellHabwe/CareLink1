@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main style="font-family: Arial, sans-serif; line-height: 1.5; background-color: #f5f5f5; margin: 0; padding: 0;">
+    <!-- PRODUCT -->
+    <div class="product-container" style="background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-top: 30px;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 20px;">
+            <div class="card-wrapper">
+                <div class="card" style="display: flex;">
+                    <!-- card left -->
+                    <div class="product-imgs" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <div class="img-display">
+                            <div class="img-showcase">
+                                <img src="{{ single_product.image.url }}" alt="image" class="detailimg" style="max-width: 100%; height: auto;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card right -->
+                    <div class="product-content" style="padding: 30px;">
+                        <div class="product-rating" style="color: #ffc107; margin-bottom: 10px;">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price" style="font-size: 20px; color: #256eff; margin-bottom: 20px;">
+                            <p class="new-price">{{ single_product.hospital_name }}</p>
+                        </div>
+                        <div class="product-detail">
+                            <p style="font-size: 16px; color: #333; margin-bottom: 10px;">Description: {{ single_product.description }}</p>
+                            <ul>
+                                <li>{{ single_product.social_amenities }}</li>
+                            </ul>
+                        </div>
+                        <div class="purchase-info" style="margin-top: 30px;">
+                            <button type="button" class="btn" style="background-color: #256eff; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: 700; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Location: {{ single_product.location }}</button>
+                        </div>
+                        <div class="services-info" style="margin-top: 20px;">
+                          <h2 style="font-size: 24px; font-weight: 700; color: #12263a; margin-bottom: 10px;">Services Offered:</h2>
+<ul style="margin: 0; padding: 0; list-style-type: none;">
+    {% for service in single_product.hospital_services.all %}
+    <li>
+        <span style="display: inline-block; padding: 5px 10px; font-size: 14px; font-weight: 600; border-radius: 20px; text-align: center; background-color: #28a745; color: #fff; margin-right: 5px;">{{ service.service.name }}</span>
+        <span style="display: inline-block; padding: 5px 10px; font-size: 14px; font-weight: 600; border-radius: 20px; text-align: center; background-color: {% if service.availability %}#28a745{% else %}#dc3545{% endif %}; color: #fff; margin-right: 5px;">
+            {% if service.availability %}Available{% else %}Unavailable{% endif %}
+        </span>
+        <span style="display: inline-block; padding: 5px 10px; font-size: 14px; font-weight: 600; border-radius: 20px; text-align: center; background-color: #dc3545; color: #fff;">Slots: {{ service.slots }}</span>
+    </li>
+    {% endfor %}
+    <a class="appointment-button"  style="display: inline-block; background-color: #256eff; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: 700; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s;">Make Appointment</a>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+{% endblock content %}
+

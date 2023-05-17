@@ -1,0 +1,94 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+
+<main>
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - TESTIMONIALS, CTA & SERVICE
+    -->
+
+    <div>
+		{% include 'includes/alerts.html' %}
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+
+          <!--
+            - CTA
+          -->
+
+          <div class="cta-container">
+
+            {% comment %} <img src="{% static './assets/images/cta-banner.jpg'%}" alt="summer collection" class="cta-banner"> {% endcomment %}
+
+            <a href="#" class="cta-content">
+
+              <p class="discount">Shop For</p>
+
+              <h2 class="cta-title">Premium Gold</h2>
+
+              <p class="cta-text">Starting @ $5000</p>
+
+              <button class="cta-btn">Buy now</button>
+
+            </a>
+
+          </div>
+
+
+          <!--
+            - TESTIMONIALS
+          -->
+
+          <div class="testimonial">
+
+            <h2 class="title">profile</h2>
+
+            <div class="testimonial-card">
+
+              <img src="{% static './assets/images/icon.png'%}" alt="alan doe" class="testimonial-banner" width="80"
+                height="80">
+
+              <p class="testimonial-name">{{user.full_name}}</p>
+
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+
+{% endblock content %}
+
+
+

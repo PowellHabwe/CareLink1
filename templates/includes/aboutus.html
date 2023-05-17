@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+<main class="container">
+<section class="about" style="margin-top:30px;margin-bottom:50px; width: 100%;background: white;
+display: flex;justify-content: center;align-items: center;">
+    <div class="main" style="width: 1290px; max-width: 95%;margin: 0 auto;display: flex;
+    flex-wrap: wrap;align-items: center;justify-content: space-around;">
+        <img src="{% static './assets/images/gg1.png'%}" style="width: 580px;
+        max-width: 100%;height: auto;padding: 0 10px;" alt="image alt" srcset="">
+        <div class="all-text" style="width: 600px; max-width: 100%; padding: 0 10px;">
+            <h4>About us</h4>
+            <h1 style="font-size: 35px;font-weight: 700;margin-bottom: 20px;color: #111111;">Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
+            <p style="font-size: 16px; color: #777777;line-height: 30px;margin-bottom: 35px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dolore nemo distinctio ipsam voluptas
+                natus
+                excepturi? Veritatis minus voluptas nam ullam hic itaque, fuga molestiae dignissimos numquam quis
+                distinctio
+                velit at consectetur, commodi amet laudantium voluptatum eius fugiat excepturi porro!
+            </p>
+            <div class="abtn">
+                <button style="background: white;padding: 20px 32px; font-size: 16px;font-weight: bold;
+                color: #111111; border: none;outline: none; margin-right: 20px; box-shadow: 0px 16px 32px 0px rgb(0 0 0 / 6%);" type="button">Our Blog
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+{% endblock content %}

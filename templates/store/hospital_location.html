@@ -1,0 +1,203 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+<main>
+
+
+
+
+
+    <!--
+      - CATEGORY
+    -->
+
+    <div class="category">
+
+      <div class="container">
+
+        <div class="category-item-container has-scrollbar">
+
+          {% for category in links %}
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="{{ category.cat_image.url}} " alt="gold coin" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">{{ category.category_name }}</h3>
+
+                <p class="category-item-amount">(53)</p>
+              </div>
+
+              <a href="{{category.get_url}}" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR
+        -->
+
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+          <div class="sidebar-category">
+
+            <div class="sidebar-top">
+              <h2 class="sidebar-title">Hospital Categories</h2>
+
+              <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+
+            <ul class="sidebar-menu-category-list">
+              {% for category in links %}
+
+              <a href={{ category.get_url }}>
+
+                <li class="sidebar-menu-category">
+  
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+  
+                    <div class="menu-title-flex">
+                      <img src="{{ category.cat_image.url }} " alt="gold" width="20" height="20"
+                        class="menu-title-img">
+  
+                      <p class="menu-title">{{ category.category_name }}</p>
+                    </div>
+  
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                    </div>
+  
+                  </button>
+                </li>
+              </a>
+
+              {% endfor %}
+
+            </ul>
+
+          </div>
+        </div>
+
+
+
+        <div class="product-box">
+
+          <!--
+            -GOLD BARS
+          -->
+          <div class="product-main">
+
+            {% if 'search' in request.path %}
+            <h2 class="title" style="text-transform: uppercase;">Seach Result</h2>
+            {% else %}
+            <h2 class="title" style="text-transform: uppercase;">Hospitals near me</h2>
+
+            {% endif %}
+
+            <div class="product-grid">
+              {% if hospitals %}
+              {% for hospital in hospitals%}
+              <div class="showcase">
+
+                <div class="showcase-banner">
+                  <img src="{{ hospital.image.url }}" alt=""
+                    class="product-img default" width="300">
+                  <img src="{{ hospital.image.url }}" alt="P"
+                    class="product-img hover" width="300">
+
+                    {% if hospital.ambulance_available %}
+                    <p class="showcase-badge angle black">Ambulance Available</p>
+                    {% else %}
+                        <p class="showcase-badge angle black">Ambulance Unavailable</p>
+                    {% endif %}
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">{{ hospital.name }}</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">{{ hospital.address }}</a>
+                  </h3>
+
+                  <h3>
+                    <a href="#" class="showcase-title">General contact: {{ hospital.phone_number }}</a>
+                  </h3>
+
+                  <div class="price-box">
+                    <p class="price2" style="">Ambulance contacts:{{ hospital.ambulance_contacts }}</p>
+                  </div>
+                  
+                  {% comment %} <p class="showcase-badge angle black">Ambulance Available</p> {% endcomment %}
+
+                </div>
+
+              </div>
+              {% endfor %}
+              {% else %}
+                <div>
+                  <p >No hospitals Found.Please Try Again</p>
+                </div>
+              {% endif %}
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+{% endblock content %}
+

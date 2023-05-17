@@ -1,0 +1,335 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+<main>
+
+
+
+
+
+    <!--
+      - CATEGORY
+    -->
+
+    <div class="category">
+
+      <div class="container">
+
+        <div class="category-item-container has-scrollbar">
+
+          {% for category in links %}
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="{{ category.cat_image.url}} " alt="gold coin" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">{{ category.category_name }}</h3>
+
+                <p class="category-item-amount">(53)</p>
+              </div>
+
+              <a href="{{category.get_url}}" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR
+        -->
+
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+          <div class="sidebar-category">
+
+            <div class="sidebar-top">
+              <h2 class="sidebar-title">Category</h2>
+
+              <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+
+            <ul class="sidebar-menu-category-list">
+              {% for category in links %}
+
+              <a href={{ category.get_url }}>
+
+                <li class="sidebar-menu-category">
+  
+                  <button class="sidebar-accordion-menu" data-accordion-btn>
+  
+                    <div class="menu-title-flex">
+                      <img src="{{ category.cat_image.url }} " alt="gold" width="20" height="20"
+                        class="menu-title-img">
+  
+                      <p class="menu-title">{{ category.category_name }}</p>
+                    </div>
+  
+                    <div>
+                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                      <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                    </div>
+  
+                  </button>
+                </li>
+              </a>
+
+              {% endfor %}
+
+            </ul>
+
+          </div>
+
+          <div class="product-showcase">
+
+            <h3 class="showcase-heading">best sellers</h3>
+
+            <div class="showcase-wrapper">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="{% static './assets/images/products/gold-1.png'%}" alt="best" width="75" height="75"
+                      class="showcase-img">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">1 oz Britannia Gold Coin</h4>
+                    </a>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$550.00</del>
+                      <p class="price">$450.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="{% static './assets/images/products/gold-2.png'%} " alt="men's hoodies t-shirt" class="showcase-img"
+                      width="75" height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">Sovereign Elizabeth II Gold Coin | 2022</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$1700.00</del>
+                      <p class="price">$700.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="{% static './assets/images/products/gbar-1.jpg'%} " alt="100 x 1g CombiBar® " class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">100 x 1g CombiBar® </h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$5000.00</del>
+                      <p class="price">$3000.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="{% static './assets/images/products/scoin-1.png'%} " alt="1 Kilo Silver Bar" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">1 Kilo Silver Bar </h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$15.00</del>
+                      <p class="price">$12.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="product-box">
+
+          <!--
+            -GOLD BARS
+          -->
+          <div class="product-main">
+
+            {% if 'search' in request.path %}
+            <h2 class="title" style="text-transform: uppercase;">Seach Result</h2>
+            {% else %}
+            <h2 class="title" style="text-transform: uppercase;">Products</h2>
+
+            {% endif %}
+
+            <div class="product-grid">
+              {% if products %}
+              {% for product in products%}
+              <div class="showcase">
+
+                <div class="showcase-banner">
+                  <img src="{{ product.image.url }}" alt="Pure Garment Dyed Cotton Shirt"
+                    class="product-img default" width="300">
+                  <img src="{{ product.image.url }}" alt="Pure Garment Dyed Cotton Shirt"
+                    class="product-img hover" width="300">
+
+                  <p class="showcase-badge angle black">sale</p>
+
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">{{ product.category }}</a>
+
+                  <h3>
+                    <a href="#" class="showcase-title">{{ product.product_name }}</a>
+                  </h3>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">${{ product.price }}</p>
+                    {% comment %} <del>$56.00</del> {% endcomment %}
+                  </div>
+
+                </div>
+
+              </div>
+              {% endfor %}
+              {% else %}
+                <div>
+                  <p >No Products Found.Please Try Again</p>
+                </div>
+              {% endif %}
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+{% endblock content %}
+

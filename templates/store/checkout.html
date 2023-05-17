@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="container">
+  <div class="wrapper">
+    <div class="row">
+      <form action="{% url 'place_order' %}" method="POST">
+        {% csrf_token %}
+        <div class="col-7 col">
+          <h3 class="topborder"><span>Billing Details</span></h3>
+          <div class="width50 padright">
+            <label style="	font-size: 14px;" for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" required>
+          </div>
+          <div class="width50">
+            <label style="	font-size: 14px;" for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" required>
+          </div>
+          <label style="	font-size: 14px;" for="email">Email</label>
+          <input type="text" name="email" id="email" required>
+        
+          <label style="	font-size: 14px;" for="phone">Phone Number</label>
+          <input type="text" name="phone" id="phone" required>
+          <div class="width50 padright">
+            <label style="	font-size: 14px;" for="address_line_1">Address Line 1</label>
+            <input type="text" name="address_line_1" id="address_line_1" required>
+          </div>
+          <div class="width50">
+            <label style="	font-size: 14px;" for="address_line_2">Address Line 2</label>
+            <input type="text" name="address_line_2" id="address_line_2">
+          </div>
+          <div class="width50 padright">
+            <label style="	font-size: 14px;" for="city">City</label>
+            <input type="text" name="city" id="city" required>
+          </div>
+          <div class="width50">
+            <label style="	font-size: 14px;" for="state">State</label>
+            <input type="text" name="state" id="state">
+          </div>
+
+          <label style="	font-size: 14px;" for="country">Country</label>
+          <input type="text" name="country" id="country" required>
+
+          <label style="	font-size: 14px;" for="order_note" class="notes">Order Notes</label>
+          <textarea name="order_note" id="order_note" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+        </div>
+        <div class="col-5 col order">
+          <h3 class="topborder"><span>Your Order</span></h3>
+          <div class="row">
+            <h4 class="inline">Product</h4>
+            <h4 class="inline alignright">Total</h4>
+          </div>
+          {% for cart_item in cart_items %}
+
+            <div>
+              
+              <h5 class="inline difwidth"><a href="{{ cart_item.product.get_url }}">{{ cart_item.product.product_name }} x {{cart_item.quantity}}</a></h5>
+              <p style="font-size: 15px" class="inline alignright center">@ ${{ cart_item.product.price }} ${{ cart_item.sub_total }} 
+              </p> 
+
+            </div>
+          {% endfor %}
+
+          {% comment %} <div>
+            <h5 class="inline difwidth">Shipping and Handling</h5>
+            <p style="	font-size: 13px;
+            padding: 20px 0;" class="inline alignright center">Free Shipping</p>
+          </div> {% endcomment %}
+          {% comment %} <div><h5>Order Total</h5></div> {% endcomment %}
+
+          <div>
+            <h3 class="topborder"><span>Payment Method</span></h3>
+            <input type="radio" value="banktransfer" name="payment" checked><p>Our Current Payment Methods</p>
+            <p class="padleft" style="	font-size: 13px;
+            padding: 20px 0;">
+                pay with paypal or using your debit or credit card        
+            </p>
+          </div>
+          {% comment %} 
+            <div><input type="radio" value="cheque" name="payment"><p>Cheque Payment</p></div>
+          {% endcomment %}
+
+          <button style="font-weight:bold; color:red;"  type="submit" name="submit" value="Place Order" >Submit</button>
+    
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+{% endblock %}
+

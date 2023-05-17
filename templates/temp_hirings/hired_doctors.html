@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Hired Doctors</h2>
+    <ul>
+        {% for doctor in doctors %}
+            <li>
+                <strong>Name:</strong> {{ doctor.name }} <br>
+                <strong>Specialty:</strong> {{ doctor.specialty }} <br>
+                <strong>Availability:</strong> From {{ doctor.available_from }} to {{ doctor.available_to }} <br>
+                <strong>Contact Number:</strong> {{ doctor.contact_number }}
+            </li>
+        {% empty %}
+            <li>No hired doctors available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
