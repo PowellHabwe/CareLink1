@@ -1,0 +1,58 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+    
+  </head>
+  <body>
+	<form method="post" action="{% url 'location' %}">
+        {% csrf_token %}
+        <label for="destination_lat">Destination Latitude:</label>
+        <input type="text" name="destination_lat" id="destination_lat">
+        <label for="destination_lon">Destination Longitude:</label>
+        <input type="text" name="destination_lon" id="destination_lon">
+        <button type="submit">Plot Directions</button>
+    </form>
+    
+    
+    <div id="map"></div>
+
+
+    <script>
+        var userLat = {{ user_location.lat }};
+        var userLon = {{ user_location.lon }};
+        var destLat = {{ destination_lat }};
+        var destLon = {{ destination_lon }};
+        
+        var map = L.map('map').setView([userLat, userLon], 13);
+    
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+    
+        var userMarker = L.marker([userLat, userLon]).addTo(map);
+        var destMarker = L.marker([destLat, destLon]).addTo(map);
+    
+        var route = L.routing.control({
+            waypoints: [
+                L.latLng(userLat, userLon),
+                L.latLng(destLat, destLon)
+            ],
+            routeWhileDragging: true
+        }).addTo(map);
+    </script>
+     
+  </body>
+</html>

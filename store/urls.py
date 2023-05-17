@@ -25,7 +25,6 @@ urlpatterns = [
 
 
 
+    # path('map/', LocationView.as_view(), name='map')
 
-
-    path('map/', views.display_map, name='display_map'),
 ] 

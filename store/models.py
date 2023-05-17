@@ -125,3 +125,13 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Destination(models.Model):
+    destination_latitude = models.FloatField()
+    destination_longitude = models.FloatField()
+
+
+    def __str__(self):
+        return self.destination_latitude
+    

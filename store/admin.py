@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Hospital,ServiceProvided,Doctor, MedicalStaff,Vehicle,Service,HospitalService,Appointment,PaymentService
+from .models import Destination,Hospital,ServiceProvided,Doctor, MedicalStaff,Vehicle,Service,HospitalService,Appointment,PaymentService
 # Register your models here.
 
 class HospitalAdmin(admin.ModelAdmin):
@@ -14,3 +14,4 @@ admin.site.register(Appointment)
 admin.site.register(PaymentService)
 admin.site.register(ServiceProvided)
 admin.site.register(Doctor)
+admin.site.register(Destination)

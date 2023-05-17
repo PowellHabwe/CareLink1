@@ -307,7 +307,7 @@ def create_appointment_view(request):
         appointment = Appointment.objects.create(name=name, service=hospital_service.service, hospital=hospital_service.hospital)
 
         # Redirect to a success page or display a success message
-        return redirect('appointments/appointment_success.html')
+        return redirect('appointment_success.html')
 
     return render(request, 'appointments/appointment_form.html')
 
@@ -349,20 +349,17 @@ def hired_doctors(request):
 
 
 
-
-
-from django.shortcuts import render
-from django.contrib import messages
-
-def display_map(request):
-    if request.method == 'POST':
-        latitude = request.POST.get('latitude')
-        longitude = request.POST.get('longitude')
-
-        if latitude and longitude:
-            return render(request, 'store/map.html', {'latitude': latitude, 'longitude': longitude})
-        else:
-            messages.error(request, 'Please enter both latitude and longitude.')
-    
-    return render(request, 'store/map_form.html')
-
+def location(request):
+    ip = requests.get('https://api.ipify.org?format=json')
+    # print('ip', ip)
+    ip_data = json.loads(ip.text)
+    res = requests.get('http://ip-api.com/json/'+ip_data["ip"])
+    location_data_one = res.text
+    location_data = json.loads(location_data_one)
+    context = {
+        'data': location_data
+    }
+    print("latitude",location_data['lat'])
+    print("longitude",location_data['lon'])
+    # print("latitude",data.lat)
+    return location_data

@@ -126,7 +126,7 @@
             {% endif %}
 
             <div class="product-grid">
-              {% if hospitals %}
+              {% comment %} {% if hospitals %} {% endcomment %}
               {% for hospital in hospitals%}
               <div class="showcase">
 
@@ -181,11 +181,11 @@
 
               </div>
               {% endfor %}
-              {% else %}
+              {% comment %} {% else %}
                 <div>
                   <p >No hospitals Found.Please Try Again</p>
                 </div>
-              {% endif %}
+              {% endif %} {% endcomment %}
             </div>
 
           </div>
