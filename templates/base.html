@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dabec Gold Limited</title>
+  <title>MediLink</title>
 
   <!--
     - favicon
@@ -239,7 +239,7 @@
     </button>
 
     <div class="toast-banner">
-      <img src="{% static './assets/images/products/dab3.jpg'%}" alt="welcome" width="80" height="70">
+      <img src="{% static './assets/images//products/Hospital/Doctor1.jpg'%}" alt="welcome" width="80" height="70">
     </div>
 
     <div class="toast-detail">
@@ -259,7 +259,6 @@
     </div>
 
   </div>
-
 
 
 
@@ -293,40 +292,21 @@
 
         <div class="header-alert-news">
           <p>
-            <b>Free Shipping</b>
-            This Week Order Over - $2000 Worth Of Precious Metal
+            <b>Swift Support in Critical Moments</b>
           </p>
-        </div>
-
-        <div class="header-top-actions">
-
-          <!-- <select name="currency">
-
-            <option value="usd">USD &dollar;</option>
-            <option value="eur">EUR &euro;</option>
-
-          </select>
-
-          <select name="language">
-
-            <option value="en-US">English</option>
-            <option value="es-ES">Espa&ntilde;ol</option>
-            <option value="fr">Fran&ccedil;ais</option>
-
-          </select> -->
-
         </div>
 
       </div>
 
     </div>
 
+
     <div class="header-main">
 
       <div class="container">
 
         <a href="#" class="header-logo">
-          <img src=" " alt="Dabec's logo" width="120" height="36">
+          <p>MediLink</p>
         </a>
 
         <div class="header-search-container">
@@ -370,108 +350,18 @@
             <a href="/" class="menu-title" style="color: rgb(253, 253, 253);">Home</a>
           </li>
 
-          <li class="menu-category">
-            <a href="#" class="menu-title" style="color: rgb(253, 253, 253);">Categories</a>
-
-            <div class="dropdown-panel">
-
-              <ul class="dropdown-panel-list">
-
-                <li class="menu-title">
-                  <a href="{% url 'store' %}category/gold-coins/">Gold Coins</a>
-                </li>
-
-                <li class="panel-list-item">
-                  <a href="{% url 'store' %}category/gold-coins/">
-                    <img src="{% static './assets/images/thumb2.avif'%} " alt=" collection" width="250" height="119">
-                  </a>
-                </li>
-
-              </ul>
-
-              <ul class="dropdown-panel-list">
-
-                <li class="menu-title">
-                  <a href="{% url 'store' %}category/gold-bars/"> Gold Bars</a>
-                </li>
-                <li class="panel-list-item">
-                  <a href="{% url 'store' %}category/gold-bars/">
-                    <img src="{% static './assets/images/metals.jpg'%} " alt="men's fashion" width="250" height="119">
-                  </a>
-                </li>
-
-              </ul>
-
-              <ul class="dropdown-panel-list">
-
-                <li class="menu-title">
-                  <a href="{% url 'store' %}category/gold-ornaments/">Ornaments and Jewellery</a>
-                </li>
-
-
-                <li class="panel-list-item">
-                  <a href="{% url 'store' %}category/gold-ornaments/">
-                    <img src="{% static './assets/images/blog-3.jpg'%} " alt="women's fashion" width="250" height="119">
-                  </a>
-                </li>
-
-              </ul>
-
-              <ul class="dropdown-panel-list">
-
-                <li class="menu-title">
-                  <a href="{% url 'store' %}category/gold-nuggets/">Gold Nuggets</a>
-                </li>
-
-                <li class="panel-list-item">
-                  <a href="{% url 'store' %}category/gold-nuggets/">
-                    <img src="{% static './assets/images/thumb.avif'%} " alt="mouse collection" width="250" height="119">
-                  </a>
-                </li>
-
-              </ul>
-
-            </div>
-          </li>
-
-          {% comment %} <li class="menu-category">
-            <a href="#" class="menu-title" style="color: rgb(253, 253, 253);">Gold</a>
-
-            <ul class="dropdown-list">
-
-              <li class="dropdown-item">
-                <a href="{% url 'store' %}category/gold-bars/">Gold Bars</a>
-              </li>
-
-              <li class="dropdown-item">
-                <a href="{% url 'store' %}category/gold-coins/">Gold Coins</a>
-              </li>
-
-              <li class="dropdown-item">
-                <a href="{% url 'store' %}category/gold-nuggets/">Gold Nuggets</a>
-              </li>
-
-              <li class="dropdown-item">
-                <a href="{% url 'store' %}category/gold-ornaments/">Gold Ornaments</a>
-              </li>
-              <!-- <li class="dropdown-item">
-                <a href="#">Wallet</a>
-              </li>  -->
-
-            </ul>
-          </li> {% endcomment %}
 
 
           <li class="menu-category">
-            <a href="{% url 'store' %}" class="menu-title" style="color: rgb(253, 253, 253);">Store</a>
+            <a href="{% url 'get_nearby_vacancy_available_hospitals' %}" class="menu-title" style="color: rgb(253, 253, 253);">Hospital Near Me</a>
           </li>
 
           <li class="menu-category">
-            <a href="{% url 'about'%}" class="menu-title" style="color: rgb(253, 253, 253);">About</a>
+            <a href="{% url 'search_nearby_vehicles' %}" class="menu-title" style="color: rgb(253, 253, 253);">Ambulance / Medical Shuttle Near Me</a>
           </li>
 
           <li class="menu-category">
-            <a href="/contact_us.html" class="menu-title" style="color: rgb(253, 253, 253);">Contact</a>
+            <a href="{% url 'service_payments' %}" class="menu-title" style="color: rgb(253, 253, 253);">Service for Service</a>
           </li>
 
           {% if user.id is None %}
@@ -480,9 +370,9 @@
             <a href="{% url 'login' %}" class="menu-title" style="color: rgb(253, 253, 253);">LOGIN</a>
           </li>
 
-          <li class="menu-category">
+          {% comment %} <li class="menu-category">
             <a href="{% url 'register' %}" class="menu-title" style="color: rgb(253, 253, 253);">REGISTER</a>
-          </li>
+          </li> {% endcomment %}
 
           {% else %}
 
@@ -663,33 +553,10 @@
 
 
   <footer>
-
+    
     <div class="footer-category">
-
-      <div class="container">
-
-        <h2 class="footer-category-title">Brand directory</h2>
-
-        <div class="footer-category-box">
-
-          <h3 class="category-box-title">Gold Bullion:</h3>
-
-          <a href="#" class="footer-category-link">Gold Bars</a>
-          <a href="#" class="footer-category-link">Gold Coins</a>
-          <a href="#" class="footer-category-link">Gold Nuggets</a>
-
-
-        </div>
-
-        <div class="footer-category-box">
-          <h3 class="category-box-title">Gold Ornaments :</h3>
-
-          <a href="#" class="footer-category-link">Jewellery</a>
-          <a href="#" class="footer-category-link">Home Ornaments</a>
-        </div>
-
-      </div>
-
+     
+    
     </div>
 
     <div class="footer-nav">
@@ -751,6 +618,8 @@
           </li>
 
         </ul> {% endcomment %}
+      
+      
 
         <ul class="footer-nav-list">
 
@@ -780,34 +649,35 @@
 
         </ul>
 
-        <ul class="footer-nav-list">
+          <ul class="footer-nav-list">
 
           <li class="footer-nav-item">
-            <h2 class="nav-title">Services</h2>
+            <h2 class="nav-title">our values</h2>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Real Estate</a>
+            <a href="#" class="footer-nav-link">Honesty</a>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Gold Bullion and Ornaments</a>
+            <a href="#" class="footer-nav-link">Transparency</a>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Gold Coins</a>
+            <a href="#" class="footer-nav-link">Security</a>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Contact us</a>
+            <a href="#" class="footer-nav-link">Care</a>
           </li>
 
           {% comment %} <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Sitemap</a>
+            <a href="#" class="footer-nav-link"></a>
           </li> {% endcomment %}
 
         </ul>
-
+      
+      
         <ul class="footer-nav-list">
 
           <li class="footer-nav-item">
@@ -821,7 +691,7 @@
 
             <address class="content">
               419 State 414 Rte
-              Beaver Dams, New York(NY), 14812, USA
+              Beaver Dams, WestRoad (), 14812, Kenya
             </address>
           </li>
 
@@ -838,7 +708,7 @@
               <ion-icon name="mail-outline"></ion-icon>
             </div>
 
-            <a href="#" class="footer-nav-link">dabecgoldgroup@gmail.com</a>
+            <a href="#" class="footer-nav-link">carelink@gmail.com</a>
           </li>
 
         </ul>
@@ -883,7 +753,7 @@
         {% comment %} <img src="{% static './assets/images/payment.png'%}" alt="payment method" class="payment-img"> {% endcomment %}
 
         <p class="copyright">
-          Copyright &copy; <a href="#">Dabec Gold Group</a> | Designed by Powell.
+          Copyright &copy; <a href="">CareLink</a> | Designed by Team Savannah
         </p>
 
       </div>
@@ -891,6 +761,7 @@
     </div>
 
   </footer>
+
 
 
 
@@ -914,7 +785,7 @@
 
 
 
-  
+ 
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <form method="post" action="{% url 'display_map' %}">
+        {% csrf_token %}
+        <div>
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" required>
+        </div>
+        <div>
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude" required>
+        </div>
+        <div>
+            <button type="submit">Display Map</button>
+        </div>
+    </form>
+</main>
+{% endblock %}

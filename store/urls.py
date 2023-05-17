@@ -22,4 +22,10 @@ urlpatterns = [
     path('service-payments/', views.service_payments, name='service_payments'),
 
     path('hired-doctors/', views.hired_doctors, name='hired_doctors'),
+
+
+
+
+
+    path('map/', views.display_map, name='display_map'),
 ] 

@@ -148,10 +148,10 @@ def get_nearby_vacancy_available_hospitals(request):
     # Filter the list of hospitals based on the vacancyavailable boolean
     vacancy_available_hospitals = []
     for place in result.get('results', []):
-        name = place.get('name')
+        name = place.get('name').lower()  # Convert the name to lowercase
         address = place.get('vicinity')
         try:
-            hospital = Hospital.objects.get(hospital_name=name)
+            hospital = Hospital.objects.get(hospital_name__iexact=name)
             if hospital.vacancies_available:
                 hospital_data = {'name': name, 'address': address, 'phone_number': hospital.phone_number, 'ambulance_available': hospital.ambulance_available}
                 if hospital.ambulance_available:
@@ -160,7 +160,7 @@ def get_nearby_vacancy_available_hospitals(request):
                         (
                             h
                             for h in vacancy_available_hospitals
-                            if h['name'] == name and h['address'] == address
+                            if h['name'].lower() == name and h['address'] == address  # Compare lowercase names
                         ),
                         None
                     )
@@ -222,7 +222,7 @@ def get_nearest_vehicle(request, limit=5):
     for vehicle in available_vehicles:
         distance = calculate_distance(user_latitude, user_longitude, vehicle.latitude, vehicle.longitude)
         distance = distance / 1000
-        distance = round(distance, 2)
+        distance_rounded = round(distance, 2)
         vehicle_distances.append((vehicle, distance))
 
     # Sort vehicles by distance (from nearest to farthest)
@@ -340,3 +340,29 @@ def service_payments(request):
 def hired_doctors(request):
     doctors = Doctor.objects.all()
     return render(request, 'temp_hirings/hired_doctors.html', {'doctors': doctors})
+
+
+
+
+
+
+
+
+
+
+
+from django.shortcuts import render
+from django.contrib import messages
+
+def display_map(request):
+    if request.method == 'POST':
+        latitude = request.POST.get('latitude')
+        longitude = request.POST.get('longitude')
+
+        if latitude and longitude:
+            return render(request, 'store/map.html', {'latitude': latitude, 'longitude': longitude})
+        else:
+            messages.error(request, 'Please enter both latitude and longitude.')
+    
+    return render(request, 'store/map_form.html')
+

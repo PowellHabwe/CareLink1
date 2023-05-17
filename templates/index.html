@@ -15,21 +15,21 @@
 
           <div class="slider-item">
 
-            <img src="{% static './assets/images/banner-1.jpg'%} " alt="banner" class="banner-img">
+            <img src="{% static './assets/images/products/Hospital/Emergency.jpg'%} " alt="banner" class="banner-img">
 
             <div class="banner-content">
 
               <!-- <p class="banner-subtitle">Trending item</p> -->
 
-              <h2 class="banner-title">Safeguard against an uncertain future.</h2>
+              <h2 class="banner-title">Bridging the Gap in Healthcare Emergencies</h2>
               <!-- <p class="banner-text">
                 Safeguard against an uncertain future
               </p> -->
               <p class="banner-text">
-                Own precious metals
+                We Care
               </p>
 
-              <a href="#" class="banner-btn">Buy now</a>
+              <a href="#" class="banner-btn"></a>
 
             </div>
 
@@ -37,21 +37,21 @@
 
           <div class="slider-item">
 
-            <img src="{% static './assets/images/banner-12.jpg'%} " alt="gold" class="banner-img">
+            <img src="{% static './assets/images/products/Hospital/Amb2.jpg'%} " alt="gold" class="banner-img">
 
             <div class="banner-content">
 
               <!-- <p class="banner-subtitle">Trending accessories</p> -->
 
               <h2 class="banner-title">
-                Start a precious metals IRA</h2>
+                Empowering Health, One Emergency at a Time</h2>
 
               <p class="banner-text">
-                diversify now 
+                We Care
                 {% comment %} at &dollar; <b>15</b>.00 {% endcomment %}
               </p>
 
-              <a href="#" class="banner-btn">Buy now</a>
+              <a href="#" class="banner-btn">Reach Out</a>
 
             </div>
 
@@ -59,20 +59,20 @@
 
           <div class="slider-item">
 
-            <img src="{% static './assets/images/banner-3.jpg'%} " alt="banner" class="banner-img">
+            <!-- /<img src="{% static './assets/images/products/Hospital/Amb9.jpg'%} " alt="banner" class="banner-img"> -->
 
             <div class="banner-content">
 
               <!-- <p class="banner-subtitle">Sale Offer</p> -->
 
-              <h2 class="banner-title">Protect From Stock Market Volatility</h2>
+              <h2 class="banner-title">Ensuring Care When Seconds Count</h2>
 
               <p class="banner-text">
-                guard your savings and benefits
+                We Care
                  {% comment %} at &dollar; <b>29</b>.99 {% endcomment %}
               </p>
 
-              <a href="#" class="banner-btn">Buy now</a>
+              <a href="#" class="banner-btn">Reach Out</a>
 
             </div>
 
@@ -100,10 +100,6 @@
 
           <div class="category-item">
 
-            <div class="category-img-box">
-              <img src="{{ category.cat_image.url}} " alt="gold coin" width="30">
-            </div>
-
             <div class="category-content-box">
 
               <div class="category-content-flex">
@@ -120,65 +116,6 @@
 
           {% endfor %}
 
-          <!-- <div class="category-item">
-
-            <div class="category-img-box">
-              <img src="./assets/images/icons/tee.svg" alt="medals" width="30">
-            </div>
-
-            <div class="category-content-box">
-
-              <div class="category-content-flex">
-                <h3 class="category-item-title">Medals</h3>
-
-                <p class="category-item-amount">(35)</p>
-              </div>
-
-              <a href="#" class="category-btn">Show all</a>
-
-            </div>
-
-          </div>
-
-          <div class="category-item">
-
-            <div class="category-img-box">
-              <img src="./assets/images/icons/jacket.svg" alt="tokens" width="30">
-            </div>
-
-            <div class="category-content-box">
-
-              <div class="category-content-flex">
-                <h3 class="category-item-title">Tokens</h3>
-
-                <p class="category-item-amount">(16)</p>
-              </div>
-
-              <a href="#" class="category-btn">Show all</a>
-
-            </div>
-
-          </div>
-
-          <div class="category-item">
-
-            <div class="category-img-box">
-              <img src="./assets/images/icons/watch.svg" alt="colonials" width="30">
-            </div>
-
-            <div class="category-content-box">
-
-              <div class="category-content-flex">
-                <h3 class="category-item-title">Colonials</h3>
-
-                <p class="category-item-amount">(27)</p>
-              </div>
-
-              <a href="#" class="category-btn">Show all</a>
-
-            </div>
-
-          </div> -->
 
         </div>
 
@@ -209,7 +146,7 @@
             
 
             <div class="sidebar-top">
-              <h2 class="sidebar-title">Categories</h2>
+             
 
               <button class="sidebar-close-btn" data-mobile-menu-close-btn>
                 <ion-icon name="close-outline"></ion-icon>
@@ -223,10 +160,10 @@
                   <button class="sidebar-accordion-menu" data-accordion-btn>
 
                     <div class="menu-title-flex">
-                      <img src="{% static './assets/images/metals.jpg'%} " alt="all" width="20" height="20"
+                      <img src="{% static './assets/images/products/Hospital/Hospital.jpg'%} " alt="all" width="20" height="20"
                         class="menu-title-img">
 
-                      <p class="menu-title">All Products</p>
+                      <p class="menu-title">All Hospitals</p>
                     </div>
 
                     <div>
@@ -238,31 +175,7 @@
                 </li>
               </a>
 
-                {% for category in links %}
 
-                <a href={{ category.get_url }}>
-
-                <li class="sidebar-menu-category">
-
-                  <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                    <div class="menu-title-flex">
-                      <img src="{{ category.cat_image.url }} " alt="gold" width="20" height="20"
-                        class="menu-title-img">
-
-                      <p class="menu-title">{{ category.category_name }}</p>
-                    </div>
-
-                    <div>
-                      <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                      <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                    </div>
-
-                  </button>
-                </li>
-              </a>
-
-                {% endfor %}
 
             </ul>
 
@@ -270,7 +183,7 @@
 
           <div class="product-showcase">
 
-            <h3 class="showcase-heading">best sellers</h3>
+            <h3 class="showcase-heading">Affordable Hospitals</h3>
 
             <div class="showcase-wrapper">
 
@@ -279,14 +192,14 @@
                 <div class="showcase">
 
                   <a href="#" class="showcase-img-box">
-                    <img src="{% static './assets/images/products/gold-1.png'%}" alt="best" width="75" height="75"
+                    <img src="{% static './assets/images/products/Hospital/hospital-svgrepo-com.svg'%}" alt="best" width="75" height="75"
                       class="showcase-img">
                   </a>
 
                   <div class="showcase-content">
 
                     <a href="#">
-                      <h4 class="showcase-title">1 oz Britannia Gold Coin</h4>
+                      <h4 class="showcase-title">The Nairobi Hospital</h4>
                     </a>
 
                     <div class="showcase-rating">
@@ -296,11 +209,11 @@
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
                     </div>
-
+                    <!--
                     <div class="price-box">
                       <p class="price">$450.00</p>
                     </div>
-
+                  -->
                   </div>
 
                 </div>
@@ -308,14 +221,14 @@
                 <div class="showcase">
 
                   <a href="#" class="showcase-img-box">
-                    <img src="{% static './assets/images/products/gold-2.png'%} " alt="men's hoodies t-shirt" class="showcase-img"
+                    <img src="{% static './assets/images/products/Hospital/hospitalBuilding.svg'%} " alt="men's hoodies t-shirt" class="showcase-img"
                       width="75" height="75">
                   </a>
 
                   <div class="showcase-content">
 
                     <a href="#">
-                      <h4 class="showcase-title">Sovereign Elizabeth II Gold Coin | 2022</h4>
+                      <h4 class="showcase-title">The Agha Kan Hospital</h4>
                     </a>
                     <div class="showcase-rating">
                       <ion-icon name="star"></ion-icon>
@@ -324,11 +237,11 @@
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
                     </div>
-
+                    <!--
                     <div class="price-box">
                       <p class="price">$700.00</p>
                     </div>
-
+                  -->
                   </div>
 
                 </div>
@@ -336,14 +249,14 @@
                 <div class="showcase">
 
                   <a href="#" class="showcase-img-box">
-                    <img src="{% static './assets/images/products/gbar-1.jpg'%} " alt="100 x 1g CombiBar® " class="showcase-img" width="75"
+                    <img src="{% static './assets/images/products/Hospital/ambulanceLogo.svg'%} " alt="100 x 1g CombiBar® " class="showcase-img" width="75"
                       height="75">
                   </a>
 
                   <div class="showcase-content">
 
                     <a href="#">
-                      <h4 class="showcase-title">100 x 1g CombiBar® </h4>
+                      <h4 class="showcase-title">Mbagathi county hospital</h4>
                     </a>
                     <div class="showcase-rating">
                       <ion-icon name="star"></ion-icon>
@@ -353,25 +266,27 @@
                       <ion-icon name="star"></ion-icon>
                     </div>
 
+                    <!--
                     <div class="price-box">
                       <p class="price">$3000.00</p>
                     </div>
+                  -->
 
-                  </div>
+                </div>
 
                 </div>
 
                 <div class="showcase">
 
                   <a href="#" class="showcase-img-box">
-                    <img src="{% static './assets/images/products/scoin-1.png'%} " alt="1 Kilo Silver Bar" class="showcase-img" width="75"
+                    <img src="{% static './assets/images/products/Hospital/Stethescope.svg'%} " alt="1 Kilo Silver Bar" class="showcase-img" width="75"
                       height="75">
                   </a>
 
                   <div class="showcase-content">
 
                     <a href="#">
-                      <h4 class="showcase-title">1 Kilo Silver Bar </h4>
+                      <h4 class="showcase-title">Avenue Hospital</h4>
                     </a>
                     <div class="showcase-rating">
                       <ion-icon name="star"></ion-icon>
@@ -380,11 +295,11 @@
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
                     </div>
-
+                    <!--
                     <div class="price-box">
                       <p class="price">$12.00</p>
                     </div>
-
+                  -->
                   </div>
 
                 </div>
@@ -394,562 +309,11 @@
             </div>
 
           </div>
-
         </div>
 
 
 
         <div class="product-box">
-
-          <!--
-            - PRODUCT MINIMAL
-          -->
-
-          <div class="product-minimal">
-
-            <div class="product-showcase">
-
-              <h2 class="title">Affordable</h2>
-
-              <div class="showcase-wrapper has-scrollbar">
-
-                <div class="showcase-container">
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/aff1.jpg'%} " alt="affordable"
-                        width="70" class="showcase-img">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Silver</a>
-
-                      <div class="price-box">
-                        <p class="price">$45.00</p>
-                        <del>$12.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/gold-1.png'%}" alt="affordable"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet consectetur.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Gold</a>
-
-                      <div class="price-box">
-                        <p class="price">$76.00</p>
-                        <del>$25.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/aff4.jpg'%}" alt="affordable"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Silver</a>
-
-                      <div class="price-box">
-                        <p class="price">$68.00</p>
-                        <del>$31.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-            <div class="product-showcase">
-
-              <h2 class="title">Top Rated</h2>
-
-              <div class="showcase-wrapper  has-scrollbar">
-
-                <div class="showcase-container">
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/top1.jpg'%}" alt="top"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet consectetur.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Gold</a>
-
-                      <div class="price-box">
-                        <p class="price">$49.00</p>
-                        <del>$15.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/top3.jpg'%}" alt="top"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Gold</a>
-
-                      <div class="price-box">
-                        <p class="price">$94.00</p>
-                        <del>$42.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/top4.jpg'%}" alt="top"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Gold</a>
-
-                      <div class="price-box">
-                        <p class="price">$54.00</p>
-                        <del>$65.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <!-- <div class="showcase-container">
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/sports-6.jpg" alt="air tekking shoes - white"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Air Trekking Shoes - white</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Sports</a>
-
-                      <div class="price-box">
-                        <p class="price">$52.00</p>
-                        <del>$55.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/shoe-3.jpg" alt="Boot With Suede Detail" class="showcase-img"
-                        width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Boot With Suede Detail</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">boots</a>
-
-                      <div class="price-box">
-                        <p class="price">$20.00</p>
-                        <del>$30.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/shoe-1.jpg" alt="men's leather formal wear shoes"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Men's Leather Formal Wear shoes</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">formal</a>
-
-                      <div class="price-box">
-                        <p class="price">$56.00</p>
-                        <del>$78.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/shoe-2.jpg" alt="casual men's brown shoes" class="showcase-img"
-                        width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Casual Men's Brown shoes</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Casual</a>
-
-                      <div class="price-box">
-                        <p class="price">$50.00</p>
-                        <del>$55.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div> -->
-
-              </div>
-
-            </div>
-
-            <div class="product-showcase">
-
-              <h2 class="title">New</h2>
-
-              <div class="showcase-wrapper  has-scrollbar">
-
-                <div class="showcase-container">
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/new1.jpg'%}" alt="new"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Silver</a>
-
-                      <div class="price-box">
-                        <p class="price">$50000.00</p>
-                        <del>$34000.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/new3.jpg'%}" alt="new"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet consectetur.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Gold</a>
-
-                      <div class="price-box">
-                        <p class="price">$42000.00</p>
-                        <del>$20000.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="{% static './assets/images/products/new4.jpg'%}" alt="new"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Lorem ipsum dolor sit amet.</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Gold</a>
-
-                      <div class="price-box">
-                        <p class="price">$24000.00</p>
-                        <del>$10000.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <!-- <div class="showcase-container">
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="./assets/images/products/jewellery-2.jpg" alt="platinum zircon classic ring"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">platinum Zircon Classic Ring</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">jewellery</a>
-
-                      <div class="price-box">
-                        <p class="price">$62.00</p>
-                        <del>$65.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="./assets/images/products/watch-1.jpg" alt="smart watche vital plus" class="showcase-img"
-                        width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Smart watche Vital Plus</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Watches</a>
-
-                      <div class="price-box">
-                        <p class="price">$56.00</p>
-                        <del>$78.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="./assets/images/products/gold.jpg" alt="deal of the day"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">shampoo conditioner packs</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">cosmetics</a>
-
-                      <div class="price-box">
-                        <p class="price">$20.00</p>
-                        <del>$30.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-
-                    <a href="#" class="showcase-img-box">
-                      <img src="./assets/images/products/jewellery-1.jpg" alt="rose gold peacock earrings"
-                        class="showcase-img" width="70">
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Rose Gold Peacock Earrings</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">jewellery</a>
-
-                      <div class="price-box">
-                        <p class="price">$20.00</p>
-                        <del>$30.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div> -->
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <!--
-            - PRODUCT FEATURED
-          -->
-
-          <div class="product-featured">
-
-            <h2 class="title">Deals of the week</h2>
-
-            <div class="showcase-wrapper has-scrollbar">
-
-              {% for deal in deals%}
-
-              <div class="showcase-container">
-
-                <div class="showcase">
-                  <a href="{{ deal.get_url }}">
-                    <div class="showcase-banner">
-                      <img src="{{ deal.image.url }}" alt="gold"
-                        class="showcase-img">
-                    </div>
-                  </a>
-
-                  <div class="showcase-content">
-
-                    <div class="showcase-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                    <a href="{{ deal.get_url }}">
-
-                      <a href="#">
-                        <h3 class="showcase-title">{{deal.product_name}}</h3>
-                      </a>
-
-                      <p class="showcase-desc">
-                        {{ deal.description }}
-                      </p>
-
-                    </a>
-
-                    <div class="price-box">
-                      <p class="price">${{deal.price}}</p>
-
-                      <del>${{deal.price_original}}</del>
-                    </div>
-
-
-                    <div class="showcase-status">
-                      <div class="wrapper">
-                        <p>
-                          already sold: <b>20</b>
-                        </p>
-
-                        <p>
-                          available: <b>40</b>
-                        </p>
-                      </div>
-
-                    </div>
-
-                    <div class="countdown-box">
-
-                      <p class="countdown-desc">
-                        Hurry Up Before The Offer Ends
-                      </p>
-
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-              {% endfor %}
-
-            </div>
-
-          </div>
 
 
 
@@ -968,10 +332,10 @@
 
                 <div class="showcase-banner">
                   <a href="{{ general.get_url }}">
-                  <img src="{{ general.image.url }}" alt=""
+                  {% comment %} <img src="{{ general.image.url }}" alt=""
                     class="product-img default" width="300">
                   <img src="{{ general.image.url }}" alt=""
-                    class="product-img hover" width="300">
+                    class="product-img hover" width="300"> {% endcomment %}
                   </a>
 
                   <div class="showcase-actions">
@@ -1029,10 +393,10 @@
 
                 <div class="showcase-banner">
                   <a href="{{ specialty.get_url }}">
-                  <img src="{{ specialty.image.url }}" alt=""
+                  {% comment %} <img src="{{ specialty.image.url }}" alt=""
                     class="product-img default" width="300">
                   <img src="{{ specialty.image.url }}" alt=""
-                    class="product-img hover" width="300">
+                    class="product-img hover" width="300"> {% endcomment %}
                   </a>
 
                   <div class="showcase-actions">
@@ -1091,10 +455,10 @@
 
                 <div class="showcase-banner">
                   <a href="{{ psychiatric.get_url }}">
-                  <img src="{{ psychiatric.image.url }}" alt=""
+                  {% comment %} <img src="{{ psychiatric.image.url }}" alt=""
                     class="product-img default" width="300">
                   <img src="{{ psychiatric.image.url }}" alt=""
-                    class="product-img hover" width="300">
+                    class="product-img hover" width="300"> {% endcomment %}
                   </a>
 
                   <div class="showcase-actions">
@@ -1153,10 +517,10 @@
 
                 <div class="showcase-banner">
                   <a href="{{ clinic.get_url }}">
-                  <img src="{{ clinic.image.url }}" alt=""
+                  {% comment %} <img src="{{ clinic.image.url }}" alt=""
                     class="product-img default" width="300">
                   <img src="{{ clinic.image.url }}" alt=""
-                    class="product-img hover" width="300">
+                    class="product-img hover" width="300"> {% endcomment %}
                   </a>
 
                   <div class="showcase-actions">
@@ -1374,110 +738,6 @@
     <!--
       - BLOG
     -->
-
-    <div class="blog">
-
-      <div class="container">
-
-        <div class="blog-container has-scrollbar">
-
-          <div class="blog-card">
-
-            <a href="#">
-              <img src="{% static './assets/images/blog-1.jpg'%}" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives"
-                width="300" class="blog-banner">
-            </a>
-
-            <div class="blog-content">
-
-              <a href="#" class="blog-category">Our Blog</a>
-
-              <a href="#">
-                <h3 class="blog-title">How To Safeguard From Geopolitical Instability.</h3>
-              </a>
-
-              <p class="blog-meta">
-                By <cite>Jack Lenard</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="blog-card">
-
-            <a href="#">
-              <img src="{% static './assets/images/blog-2.jpg'%}" alt="Curbside fashion Trends: How to Win the Pickup Battle."
-                class="blog-banner" width="300">
-            </a>
-
-            <div class="blog-content">
-
-              <a href="#" class="blog-category">Stock Market Navigation</a>
-
-              <h3>
-                <a href="#" class="blog-title">Importance of Protecting Yourself From Stock Market Volatility                  .</a>
-              </h3>
-
-              <p class="blog-meta">
-                By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="blog-card">
-
-            <a href="#">
-              <img src="{% static './assets/images/blog-3.jpg'%}" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
-                class="blog-banner" width="300">
-            </a>
-
-            <div class="blog-content">
-
-              <a href="#" class="blog-category">Diversification</a>
-
-              <h3>
-                <a href="#" class="blog-title">How To Diversify Your Savings.</a>
-              </h3>
-
-              <p class="blog-meta">
-                By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="blog-card">
-
-            <a href="#">
-              <img src="{% static './assets/images/blog-4.jpg'%}" alt="Curbside fashion Trends: How to Win the Pickup Battle."
-                class="blog-banner" width="300">
-            </a>
-
-            <div class="blog-content">
-
-              <a href="#" class="blog-category">Market Protection</a>
-
-              <h3>
-                <a href="#" class="blog-title">Hedge Against The Dollar.</a>
-              </h3>
-
-              <p class="blog-meta">
-                By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
 
   </main>
 
