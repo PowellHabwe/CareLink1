@@ -23,7 +23,7 @@ class Hospital(models.Model):
     ambulance_contacts = models.CharField(max_length=50000)
     vacancies_available = models.BooleanField(default=False)
     slug = models.SlugField(max_length=200, unique=True)
-    description = models.TextField(max_length=500, blank=True, default="we provide the best healthcare")
+    description = models.TextField(max_length=500, blank=True, default="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries")
     image = models.ImageField(upload_to='photos/products', blank=True)
     is_available = models.BooleanField(default = True)
     home_available = models.BooleanField(default = False)
