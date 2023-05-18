@@ -133,6 +133,7 @@ def get_nearby_vacancy_available_hospitals(request):
     location_data_one = res.text
     location_data = json.loads(location_data_one)
     gmaps = Client(key=settings.GOOGLE_MAPS_API_KEY)
+    available = Hospital.objects.all().filter(home_available = True)
 
     # Get the user's location
     user_location = location_data
@@ -176,7 +177,7 @@ def get_nearby_vacancy_available_hospitals(request):
             pass
 
     # Return the list of nearby vacancy available hospitals
-    return render(request, 'store/hospital_location.html', {'hospitals': vacancy_available_hospitals})
+    return render(request, 'store/hospital_location.html', {'hospitals': vacancy_available_hospitals, 'available':available})
 
 # NEAREST VEHICLE AVAILABLE
 
@@ -348,18 +349,3 @@ def hired_doctors(request):
 
 
 
-
-def location(request):
-    ip = requests.get('https://api.ipify.org?format=json')
-    # print('ip', ip)
-    ip_data = json.loads(ip.text)
-    res = requests.get('http://ip-api.com/json/'+ip_data["ip"])
-    location_data_one = res.text
-    location_data = json.loads(location_data_one)
-    context = {
-        'data': location_data
-    }
-    print("latitude",location_data['lat'])
-    print("longitude",location_data['lon'])
-    # print("latitude",data.lat)
-    return location_data

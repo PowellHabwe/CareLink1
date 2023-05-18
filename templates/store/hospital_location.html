@@ -21,9 +21,9 @@
 
           <div class="category-item">
 
-            <div class="category-img-box">
+            {% comment %} <div class="category-img-box">
               <img src="{{ category.cat_image.url}} " alt="gold coin" width="30">
-            </div>
+            </div> {% endcomment %}
 
             <div class="category-content-box">
 
@@ -87,9 +87,7 @@
                   <button class="sidebar-accordion-menu" data-accordion-btn>
   
                     <div class="menu-title-flex">
-                      <img src="{{ category.cat_image.url }} " alt="gold" width="20" height="20"
-                        class="menu-title-img">
-  
+                      
                       <p class="menu-title">{{ category.category_name }}</p>
                     </div>
   
@@ -113,9 +111,7 @@
 
         <div class="product-box">
 
-          <!--
-            -GOLD BARS
-          -->
+          
           <div class="product-main">
 
             {% if 'search' in request.path %}
@@ -126,14 +122,14 @@
             {% endif %}
 
             <div class="product-grid">
-              {% comment %} {% if hospitals %} {% endcomment %}
-              {% for hospital in hospitals%}
+              {% if available %}
+              {% for hospital in available%}
               <div class="showcase">
 
                 <div class="showcase-banner">
-                  <img src="{{ hospital.image.url }}" alt=""
+                  <img src="" alt=""
                     class="product-img default" width="300">
-                  <img src="{{ hospital.image.url }}" alt="P"
+                  <img src="" alt=""
                     class="product-img hover" width="300">
 
                     {% if hospital.ambulance_available %}
@@ -161,10 +157,10 @@
                 </div>
 
                 <div class="showcase-content">
-                  <a href="#" class="showcase-category">{{ hospital.name }}</a>
+                  <a href="#" class="showcase-category">{{ hospital.hospital_name }}</a>
 
                   <h3>
-                    <a href="#" class="showcase-title">{{ hospital.address }}</a>
+                    <a href="#" class="showcase-title">{{ hospital.location }}</a>
                   </h3>
 
                   <h3>
@@ -181,11 +177,11 @@
 
               </div>
               {% endfor %}
-              {% comment %} {% else %}
+              {% else %}
                 <div>
                   <p >No hospitals Found.Please Try Again</p>
                 </div>
-              {% endif %} {% endcomment %}
+              {% endif %}
             </div>
 
           </div>

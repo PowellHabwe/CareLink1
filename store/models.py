@@ -26,6 +26,7 @@ class Hospital(models.Model):
     description = models.TextField(max_length=500, blank=True, default="we provide the best healthcare")
     image = models.ImageField(upload_to='photos/products', blank=True)
     is_available = models.BooleanField(default = True)
+    home_available = models.BooleanField(default = False)
     home_general = models.BooleanField(default = False)
     home_specialty = models.BooleanField(default = False)
     home_psychiatric = models.BooleanField(default = False)
