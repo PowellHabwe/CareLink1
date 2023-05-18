@@ -124,7 +124,166 @@
     </div>
 
 
+    <main class="main">
+      <!--=============== SECURITY ===============-->
+      <section class="security section container" style="margin-bottom: 20px; ">
+        <div class="security__container grid">
+            <div class="security__data">
+                <h2 class="section__title-center" sty>MediLink</h2>
+                <p class="security__description" style="font-size:0.875rem; font-weight: 300; background-color: rgba(243, 232, 232, 0.849);">
+                  Medilink offers a comprehensive database of emergency services, including nearby hospitals, urgent care centers, clinics,
+                   and emergency transport services. This valuable resource proves invaluable during health emergencies,
+                   allowing users to swiftly locate the nearest medical facilities in their vicinity and identify hospitals capable of accommodating their needs together with fast and reliable medical transport services.
+                </p>
+            </div>
+        </div>
+      </section>
 
+
+    </main>
+
+    <div>
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+          <!--
+            - TESTIMONIALS
+          -->
+
+          <div class="testimonial">
+
+            <h2 class="title">A word from our team</h2>
+
+            <div class="testimonial-card">
+
+
+              <p class="testimonial-name">The MediLink Team</p>
+
+              {% comment %} <p class="testimonial-title">CEO & Founder Dabec Gold and Real Estate</p> {% endcomment %}
+
+              <img src="{% static './assets/images/icons/quotes.svg'%}" alt="quotation" class="quotation-img" width="26">
+
+              <p class="testimonial-desc">
+                Get the best care and services in case of emergencies
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - CTA
+          -->
+
+          <div class="cta-container">
+
+            <img src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="summer collection" class="cta-banner">
+
+            <a href="#" class="cta-content">
+
+              <p class="discount">We Care</p>
+
+              
+
+            </a>
+
+          </div>
+
+
+
+          <!--
+            - SERVICE
+          -->
+
+          <div class="service">
+
+            <h2 class="title">Our Services</h2>
+
+            <div class="service-container">
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Hospital Location and Directions</h3>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Location Based Ambulance and Medical Shuttle Servces</h3>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Emergency Contact Information</h3>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Real Time Bed and Service Availability</h3>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Leasing of Hospital Services</h3>
+
+                </div>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
 
     <!--
@@ -317,7 +476,7 @@
 
           <div class="product-featured">
 
-            <h2 class="title">New Market Entrants</h2>
+            <h2 class="title">New Market Entrant</h2>
 
             <div class="showcase-wrapper has-scrollbar">
 
@@ -582,7 +741,7 @@
 
             <h2 class="title" style="text-transform: uppercase;">CLINICS</h2>
 
-            <div class="product-grid">
+            <div class="product-grid" >
               {% for clinic in home_clinic%}
 
               <div class="showcase">
@@ -648,148 +807,7 @@
       - TESTIMONIALS, CTA & SERVICE
     -->
 
-    <div>
 
-      <div class="container">
-
-        <div class="testimonials-box">
-
-          <!--
-            - TESTIMONIALS
-          -->
-
-          <div class="testimonial">
-
-            <h2 class="title">A word from our team</h2>
-
-            <div class="testimonial-card">
-
-
-              <p class="testimonial-name">The MediLink Team</p>
-
-              {% comment %} <p class="testimonial-title">CEO & Founder Dabec Gold and Real Estate</p> {% endcomment %}
-
-              <img src="{% static './assets/images/icons/quotes.svg'%}" alt="quotation" class="quotation-img" width="26">
-
-              <p class="testimonial-desc">
-                Get the best care and services in case of emergencies
-              </p>
-
-            </div>
-
-          </div>
-
-
-
-          <!--
-            - CTA
-          -->
-
-          <div class="cta-container">
-
-            <img src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="summer collection" class="cta-banner">
-
-            <a href="#" class="cta-content">
-
-              <p class="discount">We Care</p>
-
-              
-
-            </a>
-
-          </div>
-
-
-
-          <!--
-            - SERVICE
-          -->
-
-          <div class="service">
-
-            <h2 class="title">Our Services</h2>
-
-            <div class="service-container">
-
-              <a href="#" class="service-item">
-
-                <div class="service-icon">
-                  <ion-icon name="boat-outline"></ion-icon>
-                </div>
-
-                <div class="service-content">
-
-                  <h3 class="service-title">Hospital Location and Directions</h3>
-
-                </div>
-
-              </a>
-
-              <a href="#" class="service-item">
-
-                <div class="service-icon">
-                  <ion-icon name="rocket-outline"></ion-icon>
-                </div>
-
-                <div class="service-content">
-
-                  <h3 class="service-title">Location Based Ambulance and Medical Shuttle Servces</h3>
-
-                </div>
-
-              </a>
-
-              <a href="#" class="service-item">
-
-                <div class="service-icon">
-                  <ion-icon name="call-outline"></ion-icon>
-                </div>
-
-                <div class="service-content">
-
-                  <h3 class="service-title">Emergency Contact Information</h3>
-
-                </div>
-
-              </a>
-
-              <a href="#" class="service-item">
-
-                <div class="service-icon">
-                  <ion-icon name="arrow-undo-outline"></ion-icon>
-                </div>
-
-                <div class="service-content">
-
-                  <h3 class="service-title">Real Time Bed and Service Availability</h3>
-
-                </div>
-
-              </a>
-
-              <a href="#" class="service-item">
-
-                <div class="service-icon">
-                  <ion-icon name="ticket-outline"></ion-icon>
-                </div>
-
-                <div class="service-content">
-
-                  <h3 class="service-title">Leasing of Hospital Services</h3>
-
-                </div>
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
 
 
 
