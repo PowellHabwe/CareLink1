@@ -223,7 +223,7 @@ def get_nearest_vehicle(request, limit=5):
     for vehicle in available_vehicles:
         distance = calculate_distance(user_latitude, user_longitude, vehicle.latitude, vehicle.longitude)
         distance = distance / 1000
-        distance_rounded = round(distance, 2)
+        distance = round(distance, 2)
         vehicle_distances.append((vehicle, distance))
 
     # Sort vehicles by distance (from nearest to farthest)
